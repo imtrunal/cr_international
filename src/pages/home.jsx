@@ -2,6 +2,7 @@ import React from 'react'
 import '../index.css'
 import { Icon } from '@iconify/react'
 import { Image } from '@nextui-org/react'
+import { Link } from 'react-router-dom'
 
 const bannersObj = [
   {
@@ -43,7 +44,7 @@ const Home = () => {
         <p>We are currently experiencing local customs clearance delays. For the latest updates, please check your order status here</p>
       </div>
       <div className="p-5 h-[80vh]">
-        <div className="relative w-full h-full min-h-[80%] rounded-3xl overflow-hidden flex items-center border border-black">
+        <div className="relative w-full h-full min-h-[80%] rounded-3xl overflow-hidden flex items-center">
           <img src="/assets/landingPage.png" alt="" className='w-full h-full object-cover absolute top-0 left-0 object-left' />
 
           <div className="
@@ -61,17 +62,19 @@ const Home = () => {
 
       <div className='grid grid-cols-2 gap-5 p-5'>
         {bannersObj.map((item, index) => (
-          <div className='w-full h-60 rounded-lg overflow-hidden' key={index}>
-            <div className="w-full h-full overflow-hidden flex items-start justify-start relative" style={{ background: '#0000' }}>
-              <img src={item.img} alt="" className='w-full h-full object-cover absolute top-0' />
-              <div className="mr-10 w-1/2 h-full flex flex-col justify-center text-right items-end gap-5 absolute right-0">
-                <p className={`text-5xl font-bold`} style={{ color: item.color }}>{item.title}</p>
-                <div className="border w-10 h-10 flex items-center justify-center rounded-full p-1 bg-white">
-                  <Icon icon='fluent:arrow-right-12-filled' fontSize={22} color={item.color} />
+          <Link to={`/products`}>
+            <div className='w-full h-60 rounded-lg overflow-hidden' key={index}>
+              <div className="w-full h-full overflow-hidden flex items-start justify-start relative" style={{ background: '#0000' }}>
+                <img src={item.img} alt="" className='w-full h-full object-cover absolute top-0' />
+                <div className="mr-10 w-1/2 h-full flex flex-col justify-center text-right items-end gap-5 absolute right-0">
+                  <p className={`text-5xl font-bold`} style={{ color: item.color }}>{item.title}</p>
+                  <div className="border w-10 h-10 flex items-center justify-center rounded-full p-1 bg-white">
+                    <Icon icon='fluent:arrow-right-12-filled' fontSize={22} color={item.color} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 
