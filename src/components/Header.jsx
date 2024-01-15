@@ -1,6 +1,7 @@
 import React from 'react'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Input, Avatar } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Input, Avatar } from "@nextui-org/react";
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 
 // Assets in public directory cannot be imported from JavaScript.
 // If you intend to import that asset, put the file in the src directory, and use /src/assets/logo.svg instead of /public/assets/logo.svg.
@@ -10,11 +11,26 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        "Handbags",
-        "Watches",
-        "Skincare",
-        "Jewellery",
-        "Apparels",
+        {
+            title: "Home",
+            url: '/'
+        },
+        {
+            title: "Product",
+            url: '/products'
+        },
+        {
+            title: "Catalogue",
+            url: '/catalogue'
+        },
+        {
+            title: "About us",
+            url: '/about'
+        },
+        {
+            title: "Contact",
+            url: '/contact'
+        },
     ];
 
     return (
@@ -24,15 +40,18 @@ const Header = () => {
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
-                <NavbarBrand className='w-10 h-full py-2'>
-                    <img src="/assets/cr_logo.png" alt="Cora'l" className='h-full' />
-                </NavbarBrand>
+                <Link to={`/`}>
+                    <NavbarBrand className='w-10 h-full py-2'>
+                        <img src="/assets/cr_logo.png" alt="Cora'l" className='h-full' />
+                    </NavbarBrand>
+                </Link>
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {menuItems.map((item, index) => (
                     <NavbarItem key={`${item}-${index}`}>
-                        <Link color='foreground'>{item}</Link>
+                        {/* <Link href={`/products/${item.url}`} color='foreground'>{item.title}</Link> */}
+                        <Link to={item.url}>{item.title}</Link>
                     </NavbarItem>
                 ))}
                 {/* <NavbarItem>
@@ -71,16 +90,7 @@ const Header = () => {
             <NavbarMenu>
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            className="w-full"
-                            href="#"
-                            size="lg"
-                        >
-                            {item}
-                        </Link>
+                        <Link className="w-full" to={item.url}>{item.title}</Link>
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
