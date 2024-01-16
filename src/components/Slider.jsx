@@ -5,21 +5,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 // import required modules
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 const Slide = ({ img }) => (
-  <div>
-    <div className="">
-      <img src={img} alt="" className='aspect-video' />
-    </div>
-    <div className="p-5">
-      <h1 className='font-bold text-neutral-900'>Lorem, ipsum dolor.</h1>
-      <p className='text-base text-neutral-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas praesentium, amet laborum veritatis necessitatibus voluptas quos possimus hic. Numquam est nihil quam nostrum cumque soluta.</p>
-    </div>
+  <div className="">
+    <img src={img} alt="" className='aspect-video select-none' />
   </div>
 )
 
@@ -92,7 +84,7 @@ const categoryObject = [
     img: [
       '/assets/PaperBags/2.png',
       '/assets/PaperBags/3.png',
-      '/assets/CoffeeCups/4.png',
+      '/assets/CoffeeCups/3.png',
       '/assets/CoffeeCups/5.png',
       '/assets/CoffeeCups/6.png',
       '/assets/FoodContainer/3.png',
@@ -119,18 +111,22 @@ const Slider = ({ category }) => {
   return (
     <React.Fragment>
       <Swiper
-        slidesPerView={3}
+        // slidesPerView={5}
         spaceBetween={30}
         loop={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        navigation={true}
-        modules={[Pagination, Navigation, Autoplay]}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        modules={[Autoplay]}
         className="mySwiper"
       >
         {data.map((item, index) => (

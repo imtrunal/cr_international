@@ -9,7 +9,6 @@ body {
 }
 
 body {
-  background: #eee;
   font-size: 14px;
   color: #000;
   margin: 0;
@@ -18,14 +17,12 @@ body {
 
 .swiper {
   width: 100%;
-  height: 60vh;
+  height: 100%;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
@@ -52,6 +49,15 @@ body {
   font-weight: bold;
   text-shadow: 0 0 10px #000;
 }
+
+
+
+@media screen and (max-width: 768px) {
+  [data-color]{
+    background-color: attr(data-color) !important;
+  }
+}
+
 
 /* #root {
   max-width: 1280px;
