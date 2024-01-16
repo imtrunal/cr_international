@@ -1,7 +1,5 @@
-import React from 'react'
 import '../index.css'
 import { Icon } from '@iconify/react'
-import { Image } from '@nextui-org/react'
 import { Link } from 'react-router-dom'
 
 /*
@@ -18,37 +16,37 @@ Cutley
 const categoryObject = [
   {
     title: 'Paper bags',
-    // img: '/assets/banner1.png',
+    img: '/assets/product1.png',
     color: '#ad2828',
     seconday: '#F6a395'
   },
   {
     title: 'Coffee cups',
-    // img: '/assets/banner2.png',
+    img: '/assets/product2.png',
     color: '#a3c9f8',
     seconday: '#213A5C'
   },
   {
     title: 'Food containers',
-    // img: '/assets/banner2.png',
+    img: '/assets/product3.png',
     color: '#a3c9f8',
     seconday: '#213A5C'
   },
   {
     title: 'Cutlery',
-    // img: '/assets/banner1.png',
+    img: '/assets/product4.png',
     color: '#ad2828',
     seconday: '#F6a395'
   },
   {
     title: 'Condments',
-    // img: '/assets/banner1.png',
+    img: '/assets/product5.png',
     color: '#ad2828',
     seconday: '#F6a395'
   },
   {
     title: 'Wrapping paper',
-    // img: '/assets/banner2.png',
+    img: '/assets/product6.png',
     color: '#a3c9f8',
     seconday: '#213A5C'
   },
@@ -57,9 +55,6 @@ const categoryObject = [
 const Home = () => {
   return (
     <main >
-      <div className="bg-neutral-200 p-4 text-center md:otext-base text-sm">
-        <p>We are currently experiencing local customs clearance delays. For the latest updates, please check your order status here</p>
-      </div>
       <div className="p-5 h-[80vh]">
         <div className="relative w-full h-full min-h-[80%] rounded-3xl overflow-hidden flex items-center">
           <img src="/assets/landingPage.png" alt="" className='w-full h-full object-cover absolute top-0 left-0 object-left' />
@@ -79,24 +74,18 @@ const Home = () => {
 
       <div className='grid md:grid-cols-2 grid-cols-1 gap-5 p-5'>
         {categoryObject.map((item, index) => (
-          <Link to={`/products`}>
+          <Link to={`/products`} key={index}>
             <div className='w-full h-60 rounded-lg overflow-hidden' key={index}>
-              <div className="w-full h-full overflow-hidden flex items-start justify-start relative" 
-              style={{ background: `${item.seconday}` }}
+              <div className="w-full h-full overflow-hidden flex items-start justify-start relative"
+                style={{ background: `${item.seconday}` }}
               >
-                {item?.img &&
-                  <img src={item?.img} alt="" className='w-full h-full object-cover absolute top-0' />
-                }
+                <img src={item.img} alt="" className='w-full h-full object-contain absolute top-0 -left-12' />
                 <div className="mr-10 w-1/2 h-full flex flex-col justify-center text-right items-end gap-5 absolute right-0">
-                  <p className={`lg:text-5xl md:text-3xl text-2xl font-bold`} 
-                  style={{ color: item.color }}
+                  <p className={`lg:text-5xl md:text-3xl text-2xl font-bold`}
+                    style={{ color: item.color }}
                   >{item.title}</p>
                   <div className="border w-10 h-10 flex items-center justify-center rounded-full p-1 bg-white">
                     <Icon icon='fluent:arrow-right-12-filled' className='lg:text-2xl md:text-xl text-lg' color={item.color} />
-                    {/* <div className="lg:visible hidden">
-                    </div>
-                    <div className=""></div>
-                    <div className=""></div> */}
                   </div>
                 </div>
               </div>
@@ -110,3 +99,6 @@ const Home = () => {
 }
 
 export default Home
+
+
+// linear-gradient(45deg, rgb(185 185 185), rgba(246, 163, 149, 0.5))
