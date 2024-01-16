@@ -1,114 +1,155 @@
 import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
-import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Slider from '../components/Slider'
 
 const ITEMS = [
     {
         img: `/assets/image1.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 145
     },
     {
         img: `/assets/image2.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 146
     },
     {
         img: `/assets/image3.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 147
     },
     {
         img: `/assets/image4.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 149
     },
     {
         img: `/assets/image1.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 150
     },
     {
         img: `/assets/image2.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 1455
     },
     {
         img: `/assets/image3.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 1451
     },
     {
         img: `/assets/image4.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 1452
     },
     {
         img: `/assets/image1.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-        Ratings: 43,
-        Price: `39.49`,
-        PrevPrice: `78.66`,
-        Offer: `50% OFF`,
-        id: 1454
     },
 ]
 
+
+// const categoryObject = [
+//     {
+//         title: 'PaperBags',
+//         img: [
+//             '/assets/PaperBags/1.png',
+//             '/assets/PaperBags/2.png',
+//             '/assets/PaperBags/3.png',
+//             '/assets/PaperBags/4.png',
+//         ]
+//     },
+//     {
+//         title: 'CoffeeCups',
+//         img: [
+//             '/assets/CoffeeCups/1.png',
+//             '/assets/CoffeeCups/2.png',
+//             '/assets/CoffeeCups/3.png',
+//             '/assets/CoffeeCups/4.png',
+//             '/assets/CoffeeCups/5.png',
+//             '/assets/CoffeeCups/6.png',
+//             '/assets/CoffeeCups/7.png',
+//             '/assets/CoffeeCups/8.png',
+//             '/assets/CoffeeCups/9.png',
+//         ]
+//     },
+//     {
+//         title: 'FoodContainer',
+//         img: [
+//             '/assets/FoodContainer/1.png',
+//             '/assets/FoodContainer/2.png',
+//             '/assets/FoodContainer/3.png',
+//             '/assets/FoodContainer/4.png',
+//             '/assets/FoodContainer/5.png',
+//             '/assets/FoodContainer/6.png',
+//             '/assets/FoodContainer/7.png',
+//             '/assets/FoodContainer/8.png',
+//         ]
+//     },
+//     {
+//         title: 'Cutlery',
+//         img: [
+//             '/assets/Cutlery/1.png',
+//             '/assets/Cutlery/2.png',
+//             '/assets/Cutlery/3.png',
+//             '/assets/Cutlery/2.png',
+//         ]
+//     },
+//     {
+//         title: 'Condments',
+//         img: [
+//             '/assets/Condments/1.png',
+//             '/assets/Condments/1.png',
+//             '/assets/Condments/1.png',
+//             '/assets/Condments/1.png',
+//         ]
+//     },
+//     {
+//         title: 'WrappingPaper',
+//         img: [
+//             '/assets/WrappingPaper/1.png',
+//             '/assets/WrappingPaper/2.png',
+//             '/assets/WrappingPaper/1.png',
+//             '/assets/WrappingPaper/2.png',
+//         ]
+//     },
+//     {
+//         title: 'All',
+//         img: [
+//             '/assets/PaperBags/2.png',
+//             '/assets/PaperBags/3.png',
+//             '/assets/CoffeeCups/4.png',
+//             '/assets/CoffeeCups/5.png',
+//             '/assets/CoffeeCups/6.png',
+//             '/assets/FoodContainer/3.png',
+//             '/assets/FoodContainer/4.png',
+//             '/assets/FoodContainer/5.png',
+//             '/assets/Cutlery/3.png',
+//             '/assets/Cutlery/2.png',
+//             '/assets/Condments/1.png',
+//             '/assets/WrappingPaper/1.png',
+//             '/assets/WrappingPaper/2.png',
+//         ]
+//     },
+// ]
+
 const Products = () => {
     let { category } = useParams()
+    let breadcrumbsTitle;
 
-    if(category == null){
-        category = "Products"
+    if (category == null) {
+        category = "All"
+        // breadcrumbsTitle = category == "All" ? "Products" : category;
     }
-
-    const [view, setView] = useState('grid')
 
     return (
         <main className='py-5 px-10'>
-            <div className="">
-                <img src="/assets/hero.png" alt="" />
-            </div>
+            {/* <div className="">
+            <img src="/assets/hero.png" alt="" />
+        </div> */}
+            <Slider category={category} />
             <div className="breadcrumbs pt-16 pb-5">
                 <Breadcrumbs color='foreground'>
                     <BreadcrumbItem href='/'>Home</BreadcrumbItem>
@@ -130,7 +171,7 @@ const Products = () => {
                                     <div className={`lg:w-[75%] md:w-2/3 w-full flex justify-between ${index % 2 == 0 ? 'order-2' : 'order-1'}`}>
                                         <div className="flex flex-col gap-3">
                                             <p className='text-xl font-bold'>{item.title}</p>
-                                            <p className='text-lg text-gray-700'>{item.category}</p>
+                                            <p className='text-lg text-gray-700'>{item.category} </p>
                                             <p className='lg:text-base text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem non dolorum fuga. Laborum eveniet delectus nesciunt labore ducimus, culpa autem a? Mollitia dicta dolor cumque dolores, nostrum impedit atque obcaecati ullam possimus natus tempora aperiam doloremque dignissimos dolore aut explicabo sapiente, totam soluta architecto facilis. Rem, itaque laboriosam. Cumque, voluptas.</p>
                                             <p className='lg:text-base text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore tempore quibusdam deserunt maiores? Tempora, esse cupiditate? Nostrum ipsum vel voluptatibus eos voluptas, nemo nulla.</p>
                                         </div>

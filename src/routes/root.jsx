@@ -5,6 +5,7 @@ import MainLayout from "../layouts/mainLayout";
 import Products from "../pages/products";
 import Contact from "../pages/contact";
 import About from './../pages/about';
+import Catalogue from "../pages/catalogue";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
   {
     path: "/about",
     element: <MainLayout><About /></MainLayout>,
+  },
+  {
+    path: "/catalogue",
+    element: <MainLayout><Catalogue /></MainLayout>,
   },
   // {
   //   path: "/about",
