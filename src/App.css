@@ -58,6 +58,31 @@ body {
   }
 }
 
+ .navigation-arrows__button--left svg {
+  display: block;
+  filter: drop-shadow(0 0 1px var(--theme-secondary-hover-color));
+  height: 72px;
+  left: 4px;
+  margin-top: -74px;
+  position: relative;
+  width: 72px;
+  z-index: 2;
+  cursor: pointer;
+}
+.navigation-arrows__button--right svg {
+  display: block;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1px var(--theme-secondary-hover-color));
+  height: 72px;
+  left: 4px;
+  margin-top: -74px;
+  position: relative;
+  width: 72px;
+  z-index: 2;
+  transform: rotate(180deg);
+}
+/* Add this CSS in your stylesheet or within a style tag in your component */
+
 
 /* #root {
   max-width: 1280px;
