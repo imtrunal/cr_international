@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Input } from "@nextui-org/react";
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Assets in public directory cannot be imported from JavaScript.
 // If you intend to import that asset, put the file in the src directory, and use /src/assets/logo.svg instead of /public/assets/logo.svg.
@@ -32,6 +32,10 @@ const Header = () => {
             url: '/contact'
         },
     ];
+const handleRoute=(url)=>{
+
+window.location.href=url
+}
 
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -42,7 +46,8 @@ const Header = () => {
                 />
                 <Link to={`/`}>
                     <NavbarBrand className='w-10 h-full py-2'>
-                        <img src="/assets/cr_logo.png" alt="Cora'l" className='h-full' />
+                        <img src="/assets/cr_lg.png" alt="Cora'l" className='h-full' />
+                        <span className='ps-2 md:block hidden  '> CR_Internation</span>
                     </NavbarBrand>
                 </Link>
             </NavbarContent>
@@ -51,7 +56,7 @@ const Header = () => {
                 {menuItems.map((item, index) => (
                     <NavbarItem key={`${item}-${index}`}>
                         {/* <Link href={`/products/${item.url}`} color='foreground'>{item.title}</Link> */}
-                        <Link to={item.url}>{item.title}</Link>
+                        <a  href={item.url}>{item.title}</a>
                     </NavbarItem>
                 ))}
                 {/* <NavbarItem>
@@ -89,8 +94,8 @@ const Header = () => {
             </NavbarContent>
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link className="w-full" to={item.url}>{item.title}</Link>
+                    <NavbarMenuItem key={`${item}-${index}`} className='hello'>
+                        <span className="w-full" onClick={()=>handleRoute(item.url)}>{item.title}</span>
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
