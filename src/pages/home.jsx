@@ -70,7 +70,7 @@ const Banner = () => (
       <p className='lg:text-4xl md:text-2xl text-xl font-medium text-[#1B4B66]'>Where innovation meets packaging perfection</p>
       <Link to={"/catalogue"}>
         <button className='lg:text-2xl md:text-xl md:py-2 md:px-5 text-base py-2 px-3 w-fit rounded-lg text-white bg-[#1B4B66] flex gap-5 items-center'>
-          See Catalogue <Icon icon='formkit:arrowright' />
+          See More <Icon icon='formkit:arrowright' />
         </button>
       </Link>
     </div>
