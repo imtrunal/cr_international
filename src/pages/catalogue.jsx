@@ -25,7 +25,6 @@ import B21 from "../images/CR Catalogue Final_page-0021.jpg"
 import HTMLFlipBook from "react-pageflip";
 
 const Catalogue = () => {
-  const [previewCatalogueEnable, setPreviewCatalogueEnable] = useState(false)
 
   const flipBookRef = useRef();
   const [page, setPage] = useState(1)
@@ -57,56 +56,49 @@ const Catalogue = () => {
   return (
     <>
       <main className="h-screen flex items-center justify-center">
-
-        {previewCatalogueEnable ?
-          <React.Fragment>
-            <div className="navigation-arrows__button--left">
-              <svg className={`${!isPrevPageAvailable() ? 'opacity-100' : 'opacity-0'}`}
-                xmlns="http://www.w3.org/2000/svg" onClick={goToPreviousPage} viewBox="0 0 72 72"><path fill="currentColor" d="M41.36 46.12c.3.32.45.48.45.68 0 .2-.15.36-.45.68l-2.57 2.74c-.34.37-.51.55-.73.55-.21 0-.39-.18-.73-.55L24.64 36.68c-.3-.32-.45-.48-.45-.68 0-.2.15-.36.45-.68l12.7-13.54c.33-.37.5-.55.72-.55.22 0 .39.18.73.55l2.57 2.74c.3.32.45.48.45.68 0 .2-.15.36-.45.68L31.88 36l9.48 10.12Z"></path></svg>
-            </div>
-            {/*!isPrevPageAvailable() && <div className="navigation-arrows__button--left">
+        <React.Fragment>
+          <div className="navigation-arrows__button--left">
+            <svg className={`${!isPrevPageAvailable() ? 'opacity-100' : 'opacity-0'}`}
+              xmlns="http://www.w3.org/2000/svg" onClick={goToPreviousPage} viewBox="0 0 72 72"><path fill="currentColor" d="M41.36 46.12c.3.32.45.48.45.68 0 .2-.15.36-.45.68l-2.57 2.74c-.34.37-.51.55-.73.55-.21 0-.39-.18-.73-.55L24.64 36.68c-.3-.32-.45-.48-.45-.68 0-.2.15-.36.45-.68l12.7-13.54c.33-.37.5-.55.72-.55.22 0 .39.18.73.55l2.57 2.74c.3.32.45.48.45.68 0 .2-.15.36-.45.68L31.88 36l9.48 10.12Z"></path></svg>
+          </div>
+          {/*!isPrevPageAvailable() && <div className="navigation-arrows__button--left">
               <svg xmlns="http://www.w3.org/2000/svg" onClick={goToPreviousPage} viewBox="0 0 72 72"><path fill="currentColor" d="M41.36 46.12c.3.32.45.48.45.68 0 .2-.15.36-.45.68l-2.57 2.74c-.34.37-.51.55-.73.55-.21 0-.39-.18-.73-.55L24.64 36.68c-.3-.32-.45-.48-.45-.68 0-.2.15-.36.45-.68l12.7-13.54c.33-.37.5-.55.72-.55.22 0 .39.18.73.55l2.57 2.74c.3.32.45.48.45.68 0 .2-.15.36-.45.68L31.88 36l9.48 10.12Z"></path></svg>
         </div>*/}
 
-            <HTMLFlipBook width={475} height={645} ref={flipBookRef} onFlip={(e) => onFlip(e.data)}>
-              <div className="demoPage"><img src={B1} /></div>
-              <div className="demoPage"><img src={B2} /></div>
-              <div className="demoPage"><img src={B3} /></div>
-              <div className="demoPage"><img src={B4} /></div>
-              <div className="demoPage"><img src={B5} /></div>
-              <div className="demoPage"><img src={B6} /></div>
-              <div className="demoPage"><img src={B7} /></div>
-              <div className="demoPage"><img src={B8} /></div>
-              <div className="demoPage"><img src={B9} /></div>
-              <div className="demoPage"><img src={B10} /></div>
-              <div className="demoPage"><img src={B11} /></div>
-              <div className="demoPage"><img src={B12} /></div>
-              <div className="demoPage"><img src={B13} /></div>
-              <div className="demoPage"><img src={B14} /></div>
-              <div className="demoPage"><img src={B15} /></div>
-              <div className="demoPage"><img src={B16} /></div>
-              <div className="demoPage"><img src={B17} /></div>
-              <div className="demoPage"><img src={B18} /></div>
-              <div className="demoPage"><img src={B19} /></div>
-              <div className="demoPage"><img src={B20} /></div>
-              <div className="demoPage"><img src={B21} /></div>
-            </HTMLFlipBook>
+          <HTMLFlipBook width={475} height={645} ref={flipBookRef} onFlip={(e) => onFlip(e.data)}>
+            <div className="demoPage"><img src={B1} /></div>
+            <div className="demoPage"><img src={B2} /></div>
+            <div className="demoPage"><img src={B3} /></div>
+            <div className="demoPage"><img src={B4} /></div>
+            <div className="demoPage"><img src={B5} /></div>
+            <div className="demoPage"><img src={B6} /></div>
+            <div className="demoPage"><img src={B7} /></div>
+            <div className="demoPage"><img src={B8} /></div>
+            <div className="demoPage"><img src={B9} /></div>
+            <div className="demoPage"><img src={B10} /></div>
+            <div className="demoPage"><img src={B11} /></div>
+            <div className="demoPage"><img src={B12} /></div>
+            <div className="demoPage"><img src={B13} /></div>
+            <div className="demoPage"><img src={B14} /></div>
+            <div className="demoPage"><img src={B15} /></div>
+            <div className="demoPage"><img src={B16} /></div>
+            <div className="demoPage"><img src={B17} /></div>
+            <div className="demoPage"><img src={B18} /></div>
+            <div className="demoPage"><img src={B19} /></div>
+            <div className="demoPage"><img src={B20} /></div>
+            <div className="demoPage"><img src={B21} /></div>
+          </HTMLFlipBook>
 
 
-            <div className="navigation-arrows__button--right">
-              <svg className={`${!isNextPageAvailable() ? 'opacity-100' : 'opacity-0'}`}
-                xmlns="http://www.w3.org/2000/svg" onClick={goToNextPage} viewBox="0 0 72 72"><path fill="currentColor" d="M41.36 46.12c.3.32.45.48.45.68 0 .2-.15.36-.45.68l-2.57 2.74c-.34.37-.51.55-.73.55-.21 0-.39-.18-.73-.55L24.64 36.68c-.3-.32-.45-.48-.45-.68 0-.2.15-.36.45-.68l12.7-13.54c.33-.37.5-.55.72-.55.22 0 .39.18.73.55l2.57 2.74c.3.32.45.48.45.68 0 .2-.15.36-.45.68L31.88 36l9.48 10.12Z"></path></svg>
-            </div>
+          <div className="navigation-arrows__button--right">
+            <svg className={`${!isNextPageAvailable() ? 'opacity-100' : 'opacity-0'}`}
+              xmlns="http://www.w3.org/2000/svg" onClick={goToNextPage} viewBox="0 0 72 72"><path fill="currentColor" d="M41.36 46.12c.3.32.45.48.45.68 0 .2-.15.36-.45.68l-2.57 2.74c-.34.37-.51.55-.73.55-.21 0-.39-.18-.73-.55L24.64 36.68c-.3-.32-.45-.48-.45-.68 0-.2.15-.36.45-.68l12.7-13.54c.33-.37.5-.55.72-.55.22 0 .39.18.73.55l2.57 2.74c.3.32.45.48.45.68 0 .2-.15.36-.45.68L31.88 36l9.48 10.12Z"></path></svg>
+          </div>
 
-            {/*!isNextPageAvailable() && <div className="navigation-arrows__button--right">
+          {/*!isNextPageAvailable() && <div className="navigation-arrows__button--right">
               <svg xmlns="http://www.w3.org/2000/svg" onClick={goToNextPage} viewBox="0 0 72 72"><path fill="currentColor" d="M41.36 46.12c.3.32.45.48.45.68 0 .2-.15.36-.45.68l-2.57 2.74c-.34.37-.51.55-.73.55-.21 0-.39-.18-.73-.55L24.64 36.68c-.3-.32-.45-.48-.45-.68 0-.2.15-.36.45-.68l12.7-13.54c.33-.37.5-.55.72-.55.22 0 .39.18.73.55l2.57 2.74c.3.32.45.48.45.68 0 .2-.15.36-.45.68L31.88 36l9.48 10.12Z"></path></svg>
       </div>*/}
-          </React.Fragment>
-          :
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => setPreviewCatalogueEnable(true)}>See Catalogue</button>
-        }
+        </React.Fragment>
       </main>
     </>
   )
