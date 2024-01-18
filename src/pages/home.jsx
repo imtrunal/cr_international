@@ -67,7 +67,7 @@ const Banner = () => (
     <img src="/assets/home.jpg" alt="" className='w-full h-full object-cover absolute top-0 left-0 object-left' />
     <div className="absolute right-0 z-10 h-5/6 p-10 bg-[#DEDEDEB3] backdrop-blur-[5] flex flex-col justify-center xl:w-[60%] md:w-[80%] md:m-0 m-5 xl:gap-8 lg:gap-7 md:gap-5 gap-3 rounded-3xl md:rounded-r-none rounded-r-3xl">
       <h1 className='lg:text-5xl md:text-4xl text-3xl font-bold text-[#1B4B66]'>Carry your Funk</h1>
-      <p className='lg:text-4xl md:text-2xl text-xl font-medium text-[#1B4B66]'>Trendy handbags collection for your party animal</p>
+      <p className='lg:text-4xl md:text-2xl text-xl font-medium text-[#1B4B66]'>Where innovation meets packaging perfection</p>
       <button className='lg:text-2xl md:text-xl md:py-2 md:px-5 text-base py-2 px-3 w-fit rounded-lg text-white bg-[#1B4B66] flex gap-5 items-center'>
         See More <Icon icon='formkit:arrowright' />
       </button>

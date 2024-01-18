@@ -59,7 +59,7 @@ body {
 }
 
  .navigation-arrows__button--left svg {
-  display: block;
+  /* display: block; */
   filter: drop-shadow(0 0 1px var(--theme-secondary-hover-color));
   height: 72px;
   left: 4px;
@@ -70,7 +70,7 @@ body {
   cursor: pointer;
 }
 .navigation-arrows__button--right svg {
-  display: block;
+  /* display: block; */
   cursor: pointer;
   filter: drop-shadow(0 0 1px var(--theme-secondary-hover-color));
   height: 72px;

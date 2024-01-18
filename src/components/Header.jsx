@@ -1,6 +1,9 @@
 import React from 'react'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Input } from "@nextui-org/react";
-import { Icon } from '@iconify/react';
+import {
+    Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem,
+    // Input 
+} from "@nextui-org/react";
+// import { Icon } from '@iconify/react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Assets in public directory cannot be imported from JavaScript.
@@ -9,16 +12,16 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
+    // const navigation = useNavigate()
     const menuItems = [
         {
             title: "Home",
             url: '/'
         },
-        {
-            title: "Product",
-            url: '/products'
-        },
+        // {
+        //     title: "Product",
+        //     url: '/products'
+        // },
         {
             title: "Catalogue",
             url: '/catalogue'
@@ -32,10 +35,11 @@ const Header = () => {
             url: '/contact'
         },
     ];
-const handleRoute=(url)=>{
-
-window.location.href=url
-}
+    const handleRoute = (url) => {
+        window.location.href = url
+        // navigation(url)
+        // setIsMenuOpen(false)
+    }
 
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen}>
@@ -47,7 +51,7 @@ window.location.href=url
                 <Link to={`/`}>
                     <NavbarBrand className='w-10 h-full py-2'>
                         <img src="/assets/cr_lg.png" alt="Cora'l" className='h-full' />
-                        <span className='ps-2 md:block hidden  '> CR_Internation</span>
+                        <span className='ps-2 md:block hidden'>CR_Internation</span>
                     </NavbarBrand>
                 </Link>
             </NavbarContent>
@@ -55,8 +59,11 @@ window.location.href=url
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 {menuItems.map((item, index) => (
                     <NavbarItem key={`${item}-${index}`}>
-                        {/* <Link href={`/products/${item.url}`} color='foreground'>{item.title}</Link> */}
-                        <a  href={item.url}>{item.title}</a>
+                        {/* 
+                            <Link href={`/products/${item.url}`} color='foreground'>{item.title}</Link> 
+                            <a  href={item.url}>{item.title}</a>
+                        */}
+                        <Link to={item.url}>{item.title}</Link>
                     </NavbarItem>
                 ))}
                 {/* <NavbarItem>
@@ -79,6 +86,7 @@ window.location.href=url
                         Sign Up
                     </Button>
                 </NavbarItem> */}
+                {/*
                 <Input
                     classNames={{
                         base: "max-w-full sm:max-w-[10rem] h-10",
@@ -91,11 +99,12 @@ window.location.href=url
                     startContent={<Icon icon="akar-icons:search" fontSize={24} />}
                     type="search"
                 />
+                */}
             </NavbarContent>
             <NavbarMenu>
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`} className='hello'>
-                        <span className="w-full" onClick={()=>handleRoute(item.url)}>{item.title}</span>
+                        <span className="w-full cursor-pointer" onClick={() => handleRoute(item.url)}>{item.title}</span>
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>

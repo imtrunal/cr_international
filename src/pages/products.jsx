@@ -137,7 +137,7 @@ const ITEMS = [
 
 const Products = () => {
     let { category } = useParams()
-    let breadcrumbsTitle;
+    // let breadcrumbsTitle;
 
     if (category == null) {
         category = "All"
