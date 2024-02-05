@@ -10,9 +10,9 @@ const Footer = () => {
             <div className="copyrights">
                 <p className="text-xl text-center font-bold">© 2024 CR International. All Rights Reserved.</p>
             </div>
-            <div className="devlopment">
-                <p className="text-xl font-medium">Developed By Karma Technologies</p>
-            </div>
+{/*             <div className="devlopment">
+                <p className="text-xl font-medium">Developed By</p>
+            </div> */}
         </div>
     )
 }
