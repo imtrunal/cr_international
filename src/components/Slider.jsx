@@ -104,7 +104,7 @@ const Slider = ({ category }) => {
 
   useEffect(() => {
     const result = categoryObject.filter((item) => item.title === category)
-    console.log(result[0].img);
+    // console.log(result[0].img);
     setData(result[0].img)
   }, [category])
 
