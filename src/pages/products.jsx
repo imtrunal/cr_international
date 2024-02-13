@@ -7,47 +7,12 @@ const ITEMS = [
         img: `/assets/image1.png`,
         title: `Grande`,
         category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image2.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image3.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image4.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image1.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image2.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image3.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image4.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
-    {
-        img: `/assets/image1.png`,
-        title: `Grande`,
-        category: `Blossom Punch`,
-    },
+        description: `
+        
+        
+        
+        `
+    }
 ]
 
 
@@ -172,8 +137,58 @@ const Products = () => {
                                         <div className="flex flex-col gap-3">
                                             <p className='text-xl font-bold'>{item.title}</p>
                                             <p className='text-lg text-gray-700'>{item.category} </p>
-                                            <p className='lg:text-base text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem non dolorum fuga. Laborum eveniet delectus nesciunt labore ducimus, culpa autem a? Mollitia dicta dolor cumque dolores, nostrum impedit atque obcaecati ullam possimus natus tempora aperiam doloremque dignissimos dolore aut explicabo sapiente, totam soluta architecto facilis. Rem, itaque laboriosam. Cumque, voluptas.</p>
-                                            <p className='lg:text-base text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore tempore quibusdam deserunt maiores? Tempora, esse cupiditate? Nostrum ipsum vel voluptatibus eos voluptas, nemo nulla.</p>
+                                            {/* <p className='lg:text-base text-sm'>{item.description}</p> */}
+                                            <p className='lg:text-base text-sm'>
+
+                                                (1)CA-WF1/4 / CA-BF1/4
+                                                #¼ Flat
+                                                White / brown
+                                                140 x 102 mm
+                                                1000 / bundle <br />
+
+                                                (2)CA-WF1/2
+                                                #½ Flat
+                                                White
+                                                160 x 127 mm
+                                                1000 / bundle <br />
+
+                                                (3)CA-WF01 / CA-BF01
+                                                #1 Flat
+                                                White / brown
+                                                180 x 140 mm
+                                                1000 / bundle <br />
+
+                                                (4)CA-WF01W / CA-BF01W
+                                                #1 Square flat
+                                                White / brown
+                                                195 x 165 mm
+                                                1000 / bundle <br />
+
+                                                (5)PB-WF02 / PB-BF02
+                                                #2 Flat
+                                                White / brown
+                                                250 x 165 mm
+                                                500 / bundle <br />
+
+                                                (6)CA-WF03 / PB-BF03
+                                                #3 Flat
+                                                White / brown
+                                                245 x 200 mm
+                                                500 / bundle <br />
+
+                                                (7)CA-WF02W / CA-BF02W
+                                                #2 Square flat
+                                                White / brown
+                                                210 x 200 mm
+                                                500 / bundle <br />
+
+                                                (8)PB-WF06 / PB-BF06
+                                                #6 Flat
+                                                White / brown
+                                                350 x 235 mm
+                                                500 / bundle <br />
+
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
