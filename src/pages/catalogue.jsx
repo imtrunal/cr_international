@@ -55,7 +55,7 @@ const Catalogue = () => {
 
   return (
     <>
-      <main className="h-screen flex items-center justify-center">
+      <main className="h-screen flex items-center justify-center mt-10 md:mt-0">
         <React.Fragment>
           <div className="navigation-arrows__button--left">
             <svg className={`${!isPrevPageAvailable() ? 'opacity-100' : 'opacity-0'}`}

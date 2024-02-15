@@ -92,7 +92,7 @@ const Home = () => {
                 style={{ background: `${item.secondary}` }}
               // style={{`--color: ${item.color}; --secondary: ${item.secondary}; --color2: ${item.color2}; --secondary2: ${item.secondary2};`}}
               >
-                <img src={item.img} alt="" className='w-full h-full object-contain absolute top-0 -left-12' />
+                <img src={item.img} alt="" className='w-full h-full object-contain absolute top-0 -left-12 lg:-left-28 xl:-left-20' />
                 <div className="mr-10 w-1/3 lg:w-1/2 h-full flex flex-col justify-center text-right items-end gap-5 absolute right-0">
                   <p className={`lg:text-5xl md:text-3xl text-2xl font-bold`}
                     style={{ color: item.color }}

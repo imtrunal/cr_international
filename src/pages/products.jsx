@@ -66,6 +66,14 @@ const detailsOfProduct = [
         title: "Paper Bags",
         img: '/assets/PaperBags/1.png',
         description: [
+            "(1)CA-WF1/4 / CA-BF1/4 #¼ Flat White / brown 140 x 102 mm 1000 / bundle",
+            "(2)CA-WF1/2 #½ Flat White 160 x 127 mm 1000 / bundle",
+            "(3)CA-WF01 / CA-BF01 #1 Flat White / brown 180 x 140 mm 1000 / bundle",
+            "(4)CA-WF01W / CA-BF01W #1 Square flat White / brown 195 x 165 mm 1000 / bundle",
+            "(5)PB-WF02 / PB-BF02 #2 Flat White / brown 250 x 165 mm 500 / bundle",
+            "(6)CA-WF03 / PB-BF03 #3 Flat White / brown 245 x 200 mm 500 / bundle",
+            "(7)CA-WF02W / CA-BF02W #2 Square flat White / brown 210 x 200 mm 500 / bundle",
+            "(8)PB-WF06 / PB-BF06 #6 Flat White / brown 350 x 235 mm 500 / bundle"
         ]
     },
     {
@@ -133,6 +141,11 @@ const Products = () => {
                                             </div>
                                         </div>
                                     )
+                                    // } else {
+                                    //     <div>
+                                    //         <p className='lg:text-base text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem non dolorum fuga. Laborum eveniet delectus nesciunt labore ducimus, culpa autem a? Mollitia dicta dolor cumque dolores, nostrum impedit atque obcaecati ullam possimus natus tempora aperiam doloremque dignissimos dolore aut explicabo sapiente, totam soluta architecto facilis. Rem, itaque laboriosam. Cumque, voluptas.</p>
+                                    //         <p className='lg:text-base text-sm'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam inventore tempore quibusdam deserunt maiores? Tempora, esse cupiditate? Nostrum ipsum vel voluptatibus eos voluptas, nemo nulla.</p>
+                                    //     </div>
                                 }
                             })}
                         </div>
