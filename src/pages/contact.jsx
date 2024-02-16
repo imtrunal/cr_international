@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Contact = () => {
   return (
     <main>
@@ -31,7 +33,11 @@ const Contact = () => {
                   </div>
                   <div className="border-t border-gray-200 px-6 py-4">
                     <button className="bg-[#fd9c86] hover:bg-[#fc8c70] text-white font-bold py-2 px-4 rounded">
-                      <a href="mailto:sales@crint.com.au">Send Mail</a>
+                      <Link to={"mailto:sales@crint.com.au"}>
+                        <a href="mailto:sales@crint.com.au">
+                          Send Mail
+                        </a>
+                      </Link>
                     </button>
                     {/**
                     <p className="mt-1 text-gray-600">Email: sales@crint.com.au</p>
